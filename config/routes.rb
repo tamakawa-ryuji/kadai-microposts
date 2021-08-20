@@ -17,13 +17,10 @@ Rails.application.routes.draw do
   end 
 end 
   
-    resources :users, only: [:index, :show, :create] do
+    resources :users, only: [:show] do
     member do
       get :likes
     end 
-    collection do
-      get :search
-  end
 end 
   
   resources :microposts, only: [:create, :destroy]
